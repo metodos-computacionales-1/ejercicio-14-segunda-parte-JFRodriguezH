@@ -5,6 +5,7 @@
 // variable constantes globales
 const double K = 100;
 const double M = 2;
+const double G = 0.5;
 const double LAMBDA = 1;
 const double DeltaT = 0.01;
 
@@ -40,7 +41,7 @@ double f0(double t, double y0, double y1)
 
 double f1(double t, double y0, double y1)
 {
-  return (-K/M)*pow(y0, LAMBDA);
+  return (-K/M)*pow(y0, LAMBDA)+(-G/M)*y1;
 }
 
 void rk4(double t, double h, double & y0, double & y1) // metodo de runge kutta 4 orden
